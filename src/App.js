@@ -4,12 +4,12 @@ import {
   BrowserRouter as Router, Routes, Route
 } from "react-router-dom";
 
+import './App.css';
 import PokemonList from './page/list/PokemonListPage';
 import PokemonDetails from './page/details/PokemonDetailsPage';
 
 function App() {
   return (
-    <div>
       <Router>
         <Fragment>
           <Routes>
@@ -18,7 +18,6 @@ function App() {
           </Routes>
         </Fragment>
       </Router>
-    </div>
   );
 }
 
