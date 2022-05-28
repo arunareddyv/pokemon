@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Card, Row, Col } from 'react-bootstrap';
+import { Col, Row } from "react-bootstrap";
+
+import PokemonCard from '../../components/pokemon-card/PokemonCard'
 
 class PokemonList extends React.Component {
   render() {
@@ -10,17 +11,8 @@ class PokemonList extends React.Component {
           <h1>Pokemon List</h1>
         </div>
         <Row>
-          <Col>
-          <Card>
-            <Card.Img variant="top" src="logo192.png" />
-            <Card.Body>
-              <Card.Title>Pokemon name</Card.Title>
-              <Card.Text>
-                Pokemon details
-              </Card.Text>
-              <Link to="/details/1">Details page</Link>
-            </Card.Body>
-          </Card>
+          <Col >
+            <PokemonCard />
           </Col>
         </Row>
       </div>

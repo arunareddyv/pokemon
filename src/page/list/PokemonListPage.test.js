@@ -16,8 +16,5 @@ describe('PokemonListPage', () => {
         const titleValue = screen.getByText('Pokemon List');
         expect(titleValue).toBeInTheDocument();
     })
-    test('should route to details page', () => {
-        const linkElement = screen.getByText(/Details page/i);
-        expect(linkElement).toBeInTheDocument();
-    });
+    
 });

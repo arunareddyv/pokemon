@@ -7,7 +7,7 @@ import App from './App';
 describe('App.js', () => { 
   test('should have Pokemon details as root page', () => {
     render(<App />);
-    const linkElement = screen.getByText(/Details page/i);
-    expect(linkElement).toBeInTheDocument();
+    const text = screen.getByText(/Pokemon List/i);
+    expect(text).toBeInTheDocument();
   });
 });
