@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 
 import App from './App';
 
-describe('App.js', () => { 
+describe('App', () => { 
   test('should have Pokemon details as root page', () => {
     render(<App />);
     const text = screen.getByText(/Pokemon List/i);
