@@ -1,8 +1,13 @@
+import { MemoryRouter } from "react-router"
+import React, { Fragment } from 'react';
 import { render, screen } from '@testing-library/react';
+
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App.js', () => { 
+  test('should have Pokemon details as root page', () => {
+    render(<App />);
+    const linkElement = screen.getByText(/Details page/i);
+    expect(linkElement).toBeInTheDocument();
+  });
 });
