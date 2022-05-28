@@ -13,6 +13,9 @@ class PokemonService {
     async getPokemonDetails(url) {
         return axios.get(url);
     }
+    async getPokemonDetailsByName(name){
+        return axios.get(`${this.host}/pokemon/${name}`);
+    }
 }
 
 const pokemonService = new PokemonService();

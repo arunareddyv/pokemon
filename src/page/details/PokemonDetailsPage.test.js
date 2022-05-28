@@ -1,19 +1,22 @@
-import { fireEvent, render,screen } from '@testing-library/react';
-import React from 'react';
 import { MemoryRouter } from "react-router"
+import TestRenderer from 'react-test-renderer';
 
+import React from 'react';
 import PokemonDetails from './PokemonDetailsPage';
+import pokemonService from '../../service/PokemonService'
 
+let testInstance;
 describe('PokemonListPage', () => {
-    beforeEach(() => {
-        render(
+
+    beforeEach(async () => {
+        const testRenderer = TestRenderer.create(
             <MemoryRouter>
                 <PokemonDetails />
             </MemoryRouter>
-        )
+        );
+        testInstance = testRenderer.root;
     })
-    test('should route to details page', () => {
-        const linkElement = screen.getByText(/Back/i);
-        expect(linkElement).toBeInTheDocument();
+    test('should initiate the component', async () => {
+        expect(testInstance.findByType(PokemonDetails)).toBeTruthy
     });
 });

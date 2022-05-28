@@ -1,10 +1,12 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import PokemonCard from '../../components/pokemon-card/PokemonCard'
-
+import './PokemonListPage.css';
 import pokemonService from "../../service/PokemonService";
 import StatusSpinner from "../../components/sprinner/Spinner";
+
 
 class PokemonList extends React.Component {
   constructor() {
@@ -33,6 +35,7 @@ class PokemonList extends React.Component {
     this.setState({ inProgress: false })
   }
 
+
   render() {
     return (
       <div>
@@ -46,7 +49,9 @@ class PokemonList extends React.Component {
             this.state.pokemonsList.results.map(({ name, url }) => {
               return (
                 <Col key={name} className="mt-5 ">
-                  <PokemonCard name={name} url={url} />
+                  <Link to={`/details/${name}`}  className="Details-link">
+                    <PokemonCard name={name} url={url} />
+                  </Link>
                 </Col>
               );
             })

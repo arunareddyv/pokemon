@@ -33,6 +33,7 @@ class PokemonCard extends React.Component {
       image: sprites.other.dream_world.front_default,
       abilities: abilities.map(data => data.ability.name)
     })
+    this.props.onSelect(data);
   }
 
   render() {

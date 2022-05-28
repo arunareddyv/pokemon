@@ -10,14 +10,14 @@ import PokemonDetails from './page/details/PokemonDetailsPage';
 
 function App() {
   return (
-      <Router>
-        <Fragment>
-          <Routes>
-            <Route exact path="/" element={<PokemonList/>} />
-            <Route exact path="/details/:id" element={<PokemonDetails/>} />
-          </Routes>
-        </Fragment>
-      </Router>
+    <Router>
+      <Fragment>
+        <Routes>
+          <Route exact path="/" element={<PokemonList />} />
+          <Route exact path="/details/:name" element={<PokemonDetails />} />
+        </Routes>
+      </Fragment>
+    </Router>
   );
 }
 
