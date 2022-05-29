@@ -21,6 +21,5 @@ describe('StatusSpinner', () => {
         const testInstance = testRenderer.root;
         
         expect(testInstance.findByType(StatusSpinner).props.inProgress).toBeTruthy
-        expect(testInstance.findByType(StatusSpinner).children).toHaveClass('spinner')
     })
 })
