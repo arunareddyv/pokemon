@@ -7,6 +7,8 @@ import './PokemonListPage.css';
 import StatusSpinner from "../../components/sprinner/Spinner";
 import Pagination from "../../components/pagination/Pagination";
 import PokemonListService from "./PokemonListService";
+import Sort from '../../components/sort/Sort';
+import Filter from "../../components/filter/Filter";
 
 class PokemonList extends React.Component {
   constructor(props) {
@@ -55,7 +57,6 @@ class PokemonList extends React.Component {
   onPageCountChange = (value) => {
     this.pokemonlistService.limit = value;
     this.refreshPokeMonCards()
-
   }
 
   onNext = () => {
@@ -64,6 +65,18 @@ class PokemonList extends React.Component {
 
   onPrevious = () => {
     this.refreshPokeMonCards({ isPrevious: true });
+  }
+
+  onSort = (sortType) => {
+    const data = this.state.pokemonsList || [];
+    data.sort((value1, value2) => value1[sortType].localeCompare(value2[sortType]));
+    this.setState({ pokemonsList: data });
+  }
+
+  onFilter = async (type, text) => {
+    const data = await this.pokemonlistService.filter({ type, text })
+    this.setState({ pokemonsList: data || [] });
+    this.resetPagination();
   }
 
 
@@ -75,6 +88,10 @@ class PokemonList extends React.Component {
         </div>
         <Pagination data={this.state.pageOptions} onPageCountSelect={this.onPageCountChange} onNext={this.onNext} onPrevious={this.onPrevious}></Pagination>
         <StatusSpinner inProgress={this.state.inProgress}></StatusSpinner>
+        <Row className="mt-3">
+          <Col><Filter options={['name', 'ability']} onFilter={this.onFilter}></Filter></Col>
+          <Col><Sort options={['name']} onOptionChange={this.onSort} ></Sort></Col>
+        </Row>
         <Row>
           {
             this.state.pokemonsList &&

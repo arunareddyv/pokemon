@@ -13,8 +13,12 @@ class PokemonService {
     async getPokemonDetails(url) {
         return axios.get(url);
     }
-    async getPokemonDetailsByName(name){
+    async getPokemonDetailsByName(name) {
         return axios.get(`${this.host}/pokemon/${name}`);
+    }
+
+    async getPokemonByFilter({ type, text }) {
+        return type === 'ability' ? axios.get(`${this.host}/ability/${text}`) : this.getPokemonDetailsByName(text)
     }
 }
 
