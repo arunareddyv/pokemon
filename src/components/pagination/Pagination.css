@@ -1,0 +1,13 @@
+.Pagination-count{
+    display: contents;
+}
+
+.Pagination-count button, .Pagination-count button:hover, .Pagination-count button:focus{
+    background: white;
+    color: black;
+    min-width: 100px;
+}
+
+.Page-action-btn:disabled{
+    color: gray !important;
+}

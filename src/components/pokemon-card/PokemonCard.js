@@ -62,7 +62,7 @@ class PokemonCard extends React.Component {
             <Row>
               <Col className='col-4'>Abilities - </Col>
               <Col >{
-                this.state.abilities.map(ability => <span className='px-1'><Badge bg="secondary">{ability}</Badge></span>)
+                this.state.abilities.map(ability => <span className='px-1' key={ability}><Badge bg="secondary">{ability}</Badge></span>)
               }</Col>
             </Row>
           </Card.Text>

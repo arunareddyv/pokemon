@@ -68,23 +68,23 @@ class PokemonDetails extends React.Component {
           <Row className="mt-3">
             <Col><b>Sprites :</b></Col>
           </Row>
-          <Row className="col-6">
+          <Row className="col-9">
             <Col>
-              <Card className='Poke-card p-2'>
+              <Card className='Poke-card p-2 m-2'>
                 <Card.Body>
                   <Card.Title>Front</Card.Title>
                   <Card.Text>
-                    <img src={this.state.sprites.front_default}></img>
+                    <img src={this.state.sprites.front_default} style={{height: '250px'}}></img>
                   </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
             <Col >
-              <Card className='Poke-card p-2'>
+              <Card className='Poke-card p-2 m-2'>
                 <Card.Body>
                   <Card.Title>Back</Card.Title>
                   <Card.Text>
-                    <img src={this.state.sprites.back_default}  ></img>
+                    <img src={this.state.sprites.back_default}  style={{height: '250px'}}></img>
                   </Card.Text>
                 </Card.Body>
               </Card>
