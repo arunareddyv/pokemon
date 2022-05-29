@@ -22,10 +22,10 @@ export default class Sort extends React.Component {
                         <DropdownButton
                             variant="outline-secondary"
                             title={this.state.selectedValue}
-                            id="input-group-dropdown-1"
+                            id="selectedSort"
                         >
                             {
-                                (this.props.options || []).map(option => <Dropdown.Item key={option} onClick={() => this.onOptionChange(option)}>{option}</Dropdown.Item>)
+                                (this.props.options || []).map(option => <Dropdown.Item id={option} key={option} onClick={() => this.onOptionChange(option)}>{option}</Dropdown.Item>)
                             }
 
                         </DropdownButton>
