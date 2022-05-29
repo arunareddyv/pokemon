@@ -27,10 +27,10 @@ export default class Filter extends React.Component {
                     <DropdownButton
                         variant="outline-secondary"
                         title={this.state.selectedValue}
-                        id="input-group-dropdown-1"
+                        id="selectedFilter"
                     >
                         {
-                            (this.props.options || []).map(option => <Dropdown.Item key={option} onClick={() => this.onOptionChange(option)}>{option}</Dropdown.Item>)
+                            (this.props.options || []).map(option => <Dropdown.Item id ={option} key={option} onClick={() => this.onOptionChange(option)}>{option}</Dropdown.Item>)
                         }
                     </DropdownButton>
                     <FormControl type="text" onChange={e => this.setState({ searchText: e.target.value })} value={this.state.searchText} />
