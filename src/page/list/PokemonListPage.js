@@ -84,12 +84,12 @@ class PokemonList extends React.Component {
     return (
       <div>
         <div className="Pg-title">
-          <h1>Pokemon List</h1>
+        <h1>Pokemon List</h1>
         </div>
         <Pagination data={this.state.pageOptions} onPageCountSelect={this.onPageCountChange} onNext={this.onNext} onPrevious={this.onPrevious}></Pagination>
         <StatusSpinner inProgress={this.state.inProgress}></StatusSpinner>
         <Row className="mt-3">
-          <Col><Filter options={['name', 'ability']} onFilter={this.onFilter}></Filter></Col>
+          <Col><Filter options={['ability','name']} onFilter={this.onFilter}></Filter></Col>
           <Col><Sort options={['name']} onOptionChange={this.onSort} ></Sort></Col>
         </Row>
         <Row>
@@ -97,7 +97,7 @@ class PokemonList extends React.Component {
             this.state.pokemonsList &&
             this.state.pokemonsList.map(({ name, url }) => {
               return (
-                <Col key={name} className="mt-5 ">
+                <Col key={name} className="mt-5">
                   <Link to={`/details/${name}`} className="Details-link">
                     <PokemonCard name={name} url={url} />
                   </Link>

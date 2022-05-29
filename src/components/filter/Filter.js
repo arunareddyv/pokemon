@@ -6,7 +6,7 @@ export default class Filter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedValue: "Select filter",
+            selectedValue: this.props.options[0],
             searchText: ''
         }
     }
